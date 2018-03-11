@@ -7,8 +7,9 @@ const resources = {
       'UNKNOWN_INTENT': 'Sorry, I didn\'t get that. Try saying Help.',
       'UNKNOWN_INTENT_REPROMPT': 'Try saying Help.',
       // From Launch.js
-      'LAUNCH_REPROMPT': 'Let\'s play a video!',
-      'LAUNCH_WELCOME': 'Welcome to Garrett\'s Videos. ',
+      'LAUNCH_NOLIST': 'There was a problem reading a list of videos',
+      // From utils.js
+      'ERROR_REPROMPT': 'What else can I help with?',
     },
   },
 };

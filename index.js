@@ -15,15 +15,12 @@ const APP_ID = 'amzn1.ask.skill.c419b899-a72e-4fd5-bc1c-9c153f4a1465';
 // Handles initial search from customer
 const handlers = {
   'NewSession': function() {
-    if (this.event.request.type === 'IntentRequest') {
-      this.emit(this.event.request.intent.name);
-    } else {
-      this.emit('LaunchRequest');
-    }
+    // Everything funnels to launch
+    this.emit('LaunchRequest');
   },
   'LaunchRequest': Launch.handleIntent,
   'Unhandled': function() {
-    utils.emitResponse(this, null, null, this.t(UNKNOWN_INTENT), this.t(UNKNOWN_INTENT_REPROMPT));
+    utils.emitResponse(this, null, null, this.t('UNKNOWN_INTENT'), this.t('UNKNOWN_INTENT_REPROMPT'));
   },
 };
 
