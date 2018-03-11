@@ -118,6 +118,10 @@ myResponse.succeed = function(result) {
   if (result.response.card && result.response.card.content) {
     console.log('Card Content: ' + result.response.card.content);
   }
+  if (result.response.speechletResponse && result.response.speechletResponse.directives
+    && result.response.speechletResponse.directives.videoItem) {
+    console.log('Video ' + result.response.speechletResponse.directives.videoItem.source);
+  }
   console.log('The session ' + ((!result.response.shouldEndSession) ? 'stays open.' : 'closes.'));
   if (result.sessionAttributes) {
     // Output the attributes too

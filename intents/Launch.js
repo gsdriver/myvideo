@@ -13,6 +13,7 @@ module.exports = {
       this.attributes.videos = videos;
       if (videos) {
         // Just play the first one for now
+        this.attributes.currentVideo = 0;
         this.response.playVideo(videos[0].url, videos[0].metadata);
       } else {
         this.response.speak(this.t('LAUNCH_NOLIST'));
