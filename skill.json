@@ -1,0 +1,29 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "My Videos"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda\\custom"
+        },
+        "interfaces": [
+          {
+            "type": "RENDER_TEMPLATE"
+          },
+          {
+            "type": "VIDEO_APP"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
