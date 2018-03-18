@@ -6,9 +6,7 @@
 
 const Alexa = require('alexa-sdk');
 const Launch = require('./intents/Launch');
-const Next = require('./intents/Next');
-const Previous = require('./intents/Previous');
-const utils = require('./utils');
+const Selected = require('./intents/Selected');
 const resources = require('./resources');
 
 const APP_ID = 'amzn1.ask.skill.c419b899-a72e-4fd5-bc1c-9c153f4a1465';
@@ -20,11 +18,11 @@ const handlers = {
     // Everything funnels to launch
     this.emit('LaunchRequest');
   },
+  'ElementSelected': Selected.handleIntent,
   'LaunchRequest': Launch.handleIntent,
-  'AMAZON.NextIntent': Next.handleIntent,
-  'AMAZON.PreviousIntent': Previous.handleIntent,
   'Unhandled': function() {
-    utils.emitResponse(this, null, null, this.t('UNKNOWN_INTENT'), this.t('UNKNOWN_INTENT_REPROMPT'));
+    this.response.speak(this.t('UNKNOWN_INTENT')).listen(this.t('UNKNOWN_INTENT_REPROMPT'));
+    this.emit(':responseReady');
   },
 };
 
