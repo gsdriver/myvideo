@@ -18,6 +18,7 @@ const handlers = {
     // Everything funnels to launch
     this.emit('LaunchRequest');
   },
+  'SelectedVideoIntent': Selected.handleIntent,
   'ElementSelected': Selected.handleIntent,
   'LaunchRequest': Launch.handleIntent,
   'Unhandled': function() {
