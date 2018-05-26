@@ -19,7 +19,8 @@ module.exports = {
       this.attributes.videos = videos;
       if (videos) {
         // check if the device has a video screen
-        if (this.event.context.System.device.supportedInterfaces.Display) {
+        if (this.event.context &&
+            this.event.context.System.device.supportedInterfaces.Display) {
           const listItemBuilder = new Alexa.templateBuilders.ListItemBuilder();
           const listTemplateBuilder = new Alexa.templateBuilders.ListTemplate1Builder();
           let i;

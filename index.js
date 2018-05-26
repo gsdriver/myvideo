@@ -46,6 +46,5 @@ exports.handler = function(event, context, callback) {
   }
   alexa.resources = resources.languageStrings;
   alexa.registerHandlers(handlers);
-  alexa.dynamoDBTableName = 'MyVideoSkill';
   alexa.execute();
 };
